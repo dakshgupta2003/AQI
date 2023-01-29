@@ -5,8 +5,8 @@ const airQuality = document.querySelector(".air-quality")
 const airQualityStat = document.querySelector(".air-quality-status")
 const srchBtn = document.querySelector(".search-btn")
 const componentsEle = document.querySelectorAll(".component-val")
-
-const appId = "86f7bd91be9b7c943d9284e8220edc1d" // Get your own API Key from https://home.openweathermap.org/api_keys
+const airQualityStatmsg=document.querySelector("#side-msg")
+const appId = "86f7bd91be9b7c943d9284e8220edc1d" // API Key from https://home.openweathermap.org/api_keys
 const link = "https://api.openweathermap.org/data/2.5/air_pollution"	// API end point
 
 const getUserLocation = () => {
@@ -43,7 +43,7 @@ const getAirQuality = async (lat, lon) => {
 
 const setValuesOfAir = airData => {
 	const aqi = airData.list[0].main.aqi
-	let airStat = "", color = ""
+	let airStat = "", color = "", msg="", emj=""
 
 	// Set Air Quality Index
 	if(aqi === 1){
@@ -71,33 +71,36 @@ const setValuesOfAir = airData => {
 	switch (aqi) {
 		case 1:
 			airStat = "GOOD"
+			msg ="You can breathe fresh air"
 			color = "rgb(19, 201, 28)"
 			break
 			case 2:
 				airStat = "FAIR"
+				msg ="You can step out in the breeze"
 				color = "rgb(15, 134, 25)"
 				break
 			case 3:
 				airStat = "MODERATE"
+				msg ="Please be cautious, use of mask is suggested"
 				color = "rgb(201, 204, 13)"
 				break
 			case 4:
 				airStat = "POOR"
+				msg ="High pollution level detected"
 				color = "rgb(204, 83, 13)"
 				break
 		case 5:
 			airStat = "VERY-POOR"
+			msg ="Servere pollution level detected!!"
 			color = "rgb(204, 13, 13)"
 			break
-
-		case 6:
-			airStat ="SEVERE"
-			color = "#c60b0b"
 		default:
 			airStat = "Unknown"
 	}
 
 	airQualityStat.innerText = airStat
+	airQualityStatmsg.innerText = msg
+	airQualityStatmsg.style.color = color
 	airQualityStat.style.color = color
 }
 
