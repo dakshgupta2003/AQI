@@ -85,13 +85,11 @@ input::placeholder{
 
 .side-msg{
 	font-size: 25px;
-	font-family: 'Solitreo', cursive;
-	margin: 26px 865px 25px 217px;
-	border: 3px solid white;
-	border-style: dashed;
-	padding: 10px 10px 10px 10px;
-	border-radius: 20px;
-	text-align: center;
+    font-family: 'Solitreo', cursive;
+    margin: 21px 1038px 6px 0px;
+    border: 3px solid white;
+    border-style: none;
+    text-align: center;
 }
 
 .air-quality{
