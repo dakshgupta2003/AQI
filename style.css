@@ -83,7 +83,7 @@ input::placeholder{
 	margin-left: 5px;
 }
 
-#side-msg{
+.side-msg{
 	font-size: 25px;
 	font-family: 'Solitreo', cursive;
 	margin: 26px 865px 25px 217px;
