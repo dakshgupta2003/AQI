@@ -5,7 +5,8 @@ const airQuality = document.querySelector(".air-quality")
 const airQualityStat = document.querySelector(".air-quality-status")
 const srchBtn = document.querySelector(".search-btn")
 const componentsEle = document.querySelectorAll(".component-val")
-const airQualityStatmsg=document.querySelector("#side-msg")
+const airQualityStatmsg=document.querySelector(".side-msg")
+
 const appId = "86f7bd91be9b7c943d9284e8220edc1d" // API Key from https://home.openweathermap.org/api_keys
 const link = "https://api.openweathermap.org/data/2.5/air_pollution"	// API end point
 
@@ -43,7 +44,7 @@ const getAirQuality = async (lat, lon) => {
 
 const setValuesOfAir = airData => {
 	const aqi = airData.list[0].main.aqi
-	let airStat = "", color = "", msg="", emj=""
+	let airStat = "", color = "", msg=""
 
 	// Set Air Quality Index
 	if(aqi === 1){
